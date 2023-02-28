@@ -1,0 +1,587 @@
+@import "./reset.css"
+@import "./fonts.css"
+
+$color_spring-wood: #FDFDFB
+$color_spring-wood-dark: #F7F5EF
+$color_rose-fog: #E6C8B4
+$color_fuscous-gray: #555248
+$color_fuscous-gray-light: #5c5c50
+$color_rangoon-green: #1B1A17
+$color_rangoon-green-82: rgba(27, 26, 23, 0.82)
+$color_masala: #444240
+$color_white: #FFFFFF
+$color_white-75: rgba(255, 255, 255, 0.75)
+$color_olive-haze: #8B8371
+$color_ash: #C4C0B6
+$color_cameo: #D4B098
+
+$font_playfair: "Playfair Display", serif
+$font_prata: "Prata", serif 
+$font_roboto: "Roboto", sans-serif
+
+$screen_size-lg: 1199px
+$screen_size-md: 992px
+$screen_size-sm: 767px
+$screen_size-vsm: 480px
+
+.container
+    max-width: 1366px
+    min-height: 100%
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    font-size: 14px
+    @media (max-width: $screen_size-md)
+        font-size: 12px
+    @media (max-width: $screen_size-sm)
+        font-size: 10px
+
+//header styles start
+.header
+    padding: 35px 100px
+    background-color: $color_spring-wood
+    display: flex 
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    @media (max-width: $screen_size-lg)
+        padding: 20px 40px
+    @media (max-width: $screen_size-sm)
+        flex-direction: column
+        gap: 20px
+
+.logo
+    display: flex
+    align-items: center
+    &__name
+        font-family: $font_playfair
+        font-weight: 400
+        font-size: 0.86em
+        line-height: 1.17
+        letter-spacing: 0.14em
+        text-transform: uppercase
+        color: $color_fuscous-gray
+        @media (max-width: $screen_size-sm)
+            font-size: 1em
+
+.nav 
+    &__list
+        display: flex 
+        gap: 65px
+        @media (max-width: $screen_size-sm)
+            gap: 20px
+    &__link 
+        font-family: $font_roboto
+        font-style: normal
+        font-weight: 400
+        font-size: 0.86em
+        line-height: 1.17
+        color: $color_fuscous-gray
+        transition-duration: 0.3s
+        @media (max-width: $screen_size-sm)
+            font-size: 1.5em
+        &:hover 
+            color: $color_rose-fog
+
+.icons
+    display: flex
+    gap: 23px
+    &__link
+        position: relative
+        & svg 
+            color: $color_rangoon-green
+            transition-duration: 0.3s
+            &:hover
+                color:$color_rose-fog        
+        &_counted
+            position: relative
+            &:after 
+                content: '1'
+                display: block
+                width: 13px
+                height: 13px
+                background-color: $color_rose-fog
+                border-radius: 50%
+                font-family: $font_roboto
+                font-style: normal
+                font-weight: 400
+                font-size: 0.57em
+                line-height: 1.5
+                text-align: center
+                color: $color_rangoon-green
+                position: absolute 
+                top: -10px
+                left: 14px
+                @media (max-width: $screen_size-sm)
+                    font-size: 0.8em
+                    font-weight: 700
+//header styles end
+
+//main styles start
+.main
+    flex: 1 1 auto 
+//main styles end
+
+//home styles start
+.home
+    max-height: 768px
+    background: url("../img/semicircle.png") no-repeat 469px,  $color_spring-wood
+    display: flex
+    position: relative
+    @media (max-width: $screen_size-lg)
+        justify-content: space-around
+    &__info
+        display: flex
+        flex-direction: column 
+        justify-content: center 
+        padding: 0 134px 0 185px
+        @media (max-width: $screen_size-lg)
+            padding: 50px
+        @media (max-width: $screen_size-sm)
+            padding: 20px
+    & img 
+        @media (max-width: $screen_size-lg)
+            max-width: 80%
+        @media (max-width: $screen_size-md)
+            max-width: 30%
+        @media (max-width: $screen_size-sm)
+            display: none
+    &__price
+        position: absolute
+        top: 19% 
+        left: 39% 
+        font-family: $font_prata
+        font-style: normal
+        font-weight: 400
+        font-size: 1.14em
+        line-height: 1.375
+        color: $color_rangoon-green
+        @media (max-width: $screen_size-lg)
+            left: 50%
+        @media (max-width: $screen_size-sm)
+            display: none
+        &::after
+            content: ''
+            display: block
+            width: 50px
+            height: 0.5px
+            background-color: $color_olive-haze
+            position: absolute
+            top: 50%
+            left: 82px
+    &__size
+        position: absolute
+        bottom: 15% 
+        right: 8%
+        font-family: $font_prata
+        font-style: normal
+        font-weight: 400
+        font-size: 1.143em
+        line-height: 1.375
+        color: $color_rangoon-green
+        @media (max-width: $screen_size-lg)
+            right: 0%
+        @media (max-width: $screen_size-sm)
+            display: none
+        &::before
+            content: ''
+            display: block
+            width: 50px
+            height: 0.5px
+            background-color: $color_olive-haze
+            position: absolute
+            top: 50%
+            left: -65px
+
+.info 
+    display: flex
+    gap: 39px
+    @media (max-width: $screen_size-lg)
+        gap: 20px
+    @media (max-width: $screen_size-sm)
+        text-align: center
+    &__title
+        font-family: $font_playfair
+        font-style: normal
+        font-weight: 400
+        font-size: 3.21em  
+        line-height: 1.33
+        color: $color_rangoon-green
+        position: relative
+        &::before
+            content: ''
+            display: block
+            width: 50px
+            height: 0.5px
+            background-color: $color_olive-haze
+            position: absolute
+            top: 50%
+            left: -65px
+            @media (max-width: $screen_size-md)
+                width: 30px
+                left: -35px
+            @media (max-width: $screen_size-sm)
+                display: none
+    &__subtitle 
+        font-family: $font_playfair
+        font-style: normal
+        font-weight: 400
+        font-size: 2.14em
+        line-height: 1.333
+        color: $color_rangoon-green
+    &__text
+        font-family: $font_roboto
+        font-style: normal
+        font-weight: 300
+        font-size: 1em
+        line-height: 1.5
+        color: $color_rangoon-green-82
+        @media (max-width: $screen_size-sm)
+            font-size: 1.2em
+    &__btn
+        align-self: flex-start
+        @media (max-width: $screen_size-sm)
+            align-self: center 
+
+.btn 
+    color: $color_white
+    text-transform: uppercase
+    font-family: $font_roboto
+    font-style: normal
+    font-weight: 500
+    font-size: 0.857em
+    line-height: 1.167
+    letter-spacing: 0.05em
+    padding: 26px 38px
+    transition-duration: 0.3s
+    @media (max-width: $screen_size-sm)
+        font-size: 1em
+    &_dark
+        background-color: $color_masala
+        &:hover
+            background-color: $color_fuscous-gray
+    &_light
+        background-color: $color_cameo
+        &:hover
+            background-color: $color_fuscous-gray 
+//home styles end
+
+//models styles start
+.models
+    padding: 86px 98px
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media (max-width: $screen_size-lg)
+        padding: 40px 20px
+    @media (max-width: $screen_size-sm)
+        padding: 20px
+    &__title
+        @media (max-width: $screen_size-lg)
+            margin-bottom: 20px
+    &__see-all
+        align-self: flex-end
+        font-family: $font_roboto
+        font-style: normal
+        font-weight: 500
+        font-size: 1.143em
+        line-height: 1.188
+        color: $color_masala
+        padding-bottom: 5.5px
+        border-bottom: 1px solid $color_ash
+        transition-duration: 0.3s
+        margin-bottom: 25.5px
+        &:hover
+            color: $color_rose-fog
+            cursor: pointer
+        @media (max-width: $screen_size-lg)
+            align-self: center
+    &__list
+        display: flex 
+        gap: 34px
+        @media (max-width: $screen_size-lg)
+            flex-wrap: wrap
+            justify-content: center
+            gap: 50px
+
+.model
+    background-color: $color_spring-wood
+    padding: 40px 0
+    max-width: 370px
+    display: flex
+    flex-direction: column
+    @media (max-width: $screen_size-sm)
+        align-items: center
+        padding: 20px 0
+    &__title
+        font-family: $font_playfair
+        font-style: normal
+        font-weight: 700
+        font-size: 1em
+        line-height: 1.714
+        letter-spacing: 0.03em
+        color: $color_rangoon-green-82
+        margin: 0 0 5px 40px
+        @media (max-width: $screen_size-sm)
+            font-size: 1.2em
+            margin: 0
+    &__price
+        font-family: $font_prata
+        font-style: normal
+        font-weight: 400
+        font-size: 0.857em
+        line-height: 1.333
+        color: $color_rangoon-green-82
+        margin-left: 40px
+        @media (max-width: $screen_size-sm)
+            font-size: 1.2em
+            margin: 0
+    &__link
+        display: block
+        font-family: $font_playfair
+        font-style: normal
+        font-weight: 400
+        font-size: 1.143em
+        line-height: 1.313
+        color: $color_rangoon-green
+        padding-left: 88px
+        position: relative
+        @media (max-width: $screen_size-sm)
+            font-size: 1.4em
+            padding: 0
+        &:hover
+            text-decoration: underline
+        &::before
+            content: ''
+            width: 30px
+            height: 1px
+            background-color: $color_olive-haze
+            position: absolute
+            top: 50%
+            left: 40px
+            @media (max-width: $screen_size-sm)
+                display: none
+    & img 
+        margin-left: 28px
+        background: url("../img/svg/watch-background.svg") 10px no-repeat
+        transition-duration: 0.3s
+        cursor: pointer
+        @media (max-width: $screen_size-md)
+            max-width: 70%
+        @media (max-width: $screen_size-sm)
+            max-width: 50%
+            margin: 0
+        &:hover
+            background: url("../img/svg/watch-background_full.svg") 10px no-repeat
+
+.title
+    font-family: $font_playfair
+    font-style: normal
+    font-weight: 400
+    font-size: 2.286em
+    line-height: 1.344
+    color: $color_rangoon-green
+//models styles end
+
+//catalog styles start
+.catalog
+    padding: 52px 177px 21px
+    background: url("../img/svg/catalog-background_small.svg") no-repeat 100% 0%, url("../img/svg/catalog-background_big.svg") no-repeat 100% 0%, linear-gradient(90deg, $color_spring-wood-dark 0%, $color_spring-wood-dark 34%, $color_spring-wood 34%, $color_spring-wood 100%)
+    display: flex
+    gap: 70px
+    margin-bottom: 81px
+    @media (max-width: $screen_size-lg)
+        padding: 40px
+    @media (max-width: $screen_size-sm)
+        flex-direction: column-reverse
+        gap: 20px
+        padding: 20px
+        margin-bottom: 20px
+    &__img
+        display: flex
+        flex-direction: column
+        gap: 20px
+        @media (max-width: $screen_size-lg)
+            max-width: 50%
+            align-self: center
+        @media (max-width: $screen_size-sm)
+            max-width: 80%
+    &__selector
+        align-self: flex-end
+        padding-right: 83px
+    &__info
+        display: flex
+        flex-direction: column
+        align-self: center
+        @media (max-width: $screen_size-sm)
+            text-align: center
+    &__title
+        margin-bottom: 38px
+        @media (max-width: $screen_size-sm)
+            margin-bottom: 20px
+    &__text
+        font-family: $font_roboto
+        font-style: normal
+        font-weight: 400
+        font-size: 1.143em
+        line-height: 1.5
+        color: $color_masala
+        margin-bottom: 45px
+        @media (max-width: $screen_size-sm)
+            margin-bottom: 20px
+    &__btn 
+        align-self: flex-start
+        @media (max-width: $screen_size-sm)
+            align-self: center
+
+.selector
+    &__count 
+        font-family: $font_prata
+        font-style: normal
+        font-weight: 400
+        font-size: 0.857em
+        line-height: 1.333
+        color: $color_rangoon-green-82
+        @media (max-width: $screen_size-sm)
+            font-size: 1.2em
+    &__arrow
+        cursor: pointer
+        color: $color_rangoon-green
+        transition-duration: 0.3s
+        &:hover
+            color: $color_rose-fog
+        &_left
+            margin-right: 20px
+        &_right
+            margin-left: 20px
+//catalog styles end
+
+//socials styles start 
+.socials
+    padding: 0 97px
+    margin-bottom: 90px
+    display: flex
+    justify-content: space-between
+    gap: 20px
+    @media (max-width: $screen_size-sm)
+        flex-direction: column 
+        align-items: center
+        padding: 0 20px
+        margin-bottom: 20px
+    &__info
+        align-self: center
+        @media (max-width: $screen_size-sm)
+            display: flex
+            flex-direction: column 
+            align-items: center
+            text-align: center
+    &__title
+        margin-bottom: 40px
+        @media (max-width: $screen_size-sm)
+            margin-bottom: 20px
+    &__text
+        font-family: $font_roboto
+        font-style: normal
+        font-weight: 400
+        font-size: 1.143em
+        line-height: 1.688
+        color: $color_masala
+        margin-bottom: 118px
+        @media (max-width: $screen_size-sm)
+            margin-bottom: 20px
+
+.icons
+    display: flex
+    align-items: flex-end
+    & svg
+        color: $color_fuscous-gray-light
+        &:hover
+            color: $color_ash
+
+.gallery
+    display: flex
+    gap: 10px
+    &__wrapper
+        display: flex
+        flex-direction: column
+        gap: 10px
+    & img 
+        @media (max-width: $screen_size-lg)
+            max-width: 200px
+            object-fit: cover
+        @media (max-width: $screen_size-md)
+            max-width: 150px
+            max-height: 290px
+        @media (max-width: $screen_size-vsm)
+            max-width: 100px
+            max-height: 200px
+//socials styles end
+
+//footer styles start 
+.footer
+    background-color: $color_masala
+    padding: 67px 182px
+    display: flex
+    justify-content: space-between
+    @media (max-width: $screen_size-lg)
+        padding: 40px
+    @media (max-width: $screen_size-sm)
+        flex-direction: column 
+        align-items: center
+        text-align: center
+        gap: 40px
+        padding: 20px
+    &__contacts 
+        @media (max-width: $screen_size-vsm)
+            align-self: center
+    &__title
+        margin-bottom: 33px
+        font-family: $font_roboto
+        font-style: normal
+        font-weight: 700
+        font-size: 1em
+        line-height: 1.143
+        letter-spacing: 0.07em
+        text-transform: uppercase
+        color: $color_white
+        @media (max-width: $screen_size-vsm)
+            flex-basis: 80%
+    &__list
+        display: flex
+        flex-direction: column
+        gap: 15px
+    &__link
+        font-family: $font_roboto
+        font-style: normal
+        font-weight: 400
+        font-size: 0.857em
+        line-height: 1.667
+        color: $color_white-75
+        @media (max-width: $screen_size-sm)
+            font-size: 1.2em
+        &:hover
+            color: $color_white
+
+.contacts
+    &__logo
+        display: flex
+        align-items: center
+        margin-bottom: 23px
+    &__name
+        font-family: $font_playfair
+        font-style: normal
+        font-weight: 700
+        font-size: 1em
+        line-height: 1.357
+        letter-spacing: 0.14em
+        color: $color_white
+    &__text
+        font-family: $font_roboto
+        font-style: normal
+        font-weight: 400
+        font-size: 0.857em
+        line-height: 1.667
+        color: $color_white-75
+    &__phone
+        margin-bottom: 15px
+//footer styles end
